@@ -1,6 +1,12 @@
 body{
     /* background-color: pink; */
     font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height:100vh ;
+}
+.container{
+    flex: 1;
 }
 
 /* Navbar */
@@ -91,4 +97,30 @@ body{
     opacity: 0.2;
     background-color: white;
 
+}
+
+/* New pg */
+.add-btn{
+    width: 15%;
+    background-color: #fe424d !important;
+    opacity: 0.7 !important;
+    border: none !important;
+    color: #222222 !important;
+    font-weight: 800 !important;
+}
+.add-btn:hover{
+    opacity: 1 !important;
+}
+
+/* show page */
+.show-img{
+    height: 40vh;
+    object-fit: cover;
+
+}
+.card-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
 }
