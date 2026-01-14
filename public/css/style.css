@@ -62,10 +62,15 @@ body{
 }
 
 /* Cards */
+.show-card{
+    margin: 2px !important;
+    border: none !important;
+}
+
 .listing-link{
     text-decoration: none;
 }
-.card{
+.listing-card{
     border: none !important;
     margin-bottom: 2rem;
 
@@ -73,7 +78,6 @@ body{
 .row{
     display: flex;
     align-items: center;
-    
 
 }
 .card-img-top{
@@ -81,6 +85,9 @@ body{
     width: 100% !important;
     object-fit: cover !important;    
 
+}
+.show-img{
+    width: 75% !important;
 }
 .card-body{
     padding: 0 !important;
@@ -123,4 +130,16 @@ body{
     align-items: center;
     justify-content: space-between;
     margin-top: 1rem;
+}
+
+/* review card */
+.review-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+.review-btn{
+    margin-top: 0.5rem;
+    
 }
