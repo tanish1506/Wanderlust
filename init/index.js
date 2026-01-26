@@ -17,10 +17,10 @@ async function main() {
 }
 
 const initDB = async () =>{
-   await Listing.deleteMany({});
-
-   await Listing.insertMany(initdata.data)
-   console.log("Data initialized");
+    await Listing.deleteMany({});
+    initdata.data = initdata.data.map((obj) => ({...obj , owner : "697501cb61f474804b2b1045"}))
+    await Listing.insertMany(initdata.data)
+    console.log("Data initialized");
 }
 
 

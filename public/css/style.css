@@ -87,7 +87,8 @@ body{
 
 }
 .show-img{
-    width: 75% !important;
+    width: 100% !important;
+    height: 50vh !important;
 }
 .card-body{
     padding: 0 !important;
@@ -95,6 +96,12 @@ body{
 .card-text p {
     
     font-weight: 400 !important;
+}
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 /* card effect  */
 .card-img-overlay{
