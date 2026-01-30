@@ -6,7 +6,7 @@
         </div>
         
             <div class="listing-card  col-8 offset-2 ">
-                 <img src="<%= listing.image %>" class="card-img-top show-img " alt="listing-img">
+                 <img src="<%= listing.image.url %>" class="card-img-top show-img " alt="listing-img">
                 <div class="card-body">
                     <p class="card-text">Owned by <i>&#126;<%= listing.owner.username %></i></p>
                     <p class="card-text"><i><%= listing.description %></i></p>
@@ -33,7 +33,19 @@
                             <form novalidate class="mb-3 needs-validation" method="post" action="/listings/<%= listing._id %>/reviews"  >
                                 <div class="mb-2 mt-2">
                                     <label for="rating" class="form-label">Rating</label>
-                                    <input type="range" class="form-range" min="1" max="5" id="rating"  name="review[rating]">
+                                    <fieldset class="starability-slot">
+                                        <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                                        <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                                        <label for="first-rate1" title="Terrible">1 star</label>
+                                        <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                                        <label for="first-rate2" title="Not good">2 stars</label>
+                                        <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                                        <label for="first-rate3" title="Average">3 stars</label>
+                                        <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                                        <label for="first-rate4" title="Very good">4 stars</label>
+                                        <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                                        <label for="first-rate5" title="Amazing">5 stars</label>
+                                    </fieldset>
                                 </div>
                                 <div class="mb-2 mt-2">
                                     <label for="comment" class="form-label">Comment</label>
@@ -57,10 +69,12 @@
                                         <i>@<%= review.author.username %></i>
                                         <form method="post" action="/listings/<%= listing._id%>/reviews/<%= review._id%>?_method=DELETE">
                                             <button class="btn btn-outline-dark review-btn"><i class="fa-solid fa-trash-can"></i></button>
-                                        </form>
+                                        </form>    
                                     </div>
+                                    <p class="starability-result card-text mb-2" data-rating="<%= review.rating %>">
+                                        Rated: 3 stars
+                                    </p>
                                     <p class="card-text"><%= review.comment %></p>
-                                    <p class="card-text"><%= review.rating %><i class="fa-solid fa-star"></i></p>
                                 </div>
                                 
                             </div>

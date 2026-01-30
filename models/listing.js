@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const  Review = require("./review")
+const  Review = require("./review");
+const { string } = require('joi');
 const schema =  mongoose.Schema;
 
 const listingSchema = new schema({
@@ -9,9 +10,8 @@ const listingSchema = new schema({
     },
     description : String,
     image : {
-        default : "https://plus.unsplash.com/premium_photo-1673002094195-f18084be89ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3Vuc2V0fGVufDB8fDB8fHww",
-        type : String,
-        set : (v) => v=== "undefined" ? "https://plus.unsplash.com/premium_photo-1673002094195-f18084be89ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3Vuc2V0fGVufDB8fDB8fHww" : v,
+        url : String,
+        filename : String
     },
     price : Number,
     location : String,
