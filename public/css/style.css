@@ -150,3 +150,10 @@ body{
     margin-top: 0.5rem;
     
 }
+
+
+/* Mapppp */
+#map{ 
+    height: 400px;
+    width: 60vw;
+}
